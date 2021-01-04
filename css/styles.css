@@ -1,0 +1,215 @@
+/*Start*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-family: 'PMingLiU',sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+p{
+    font-size: 1.6rem;
+}
+img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+section{
+    padding: 5rem 0;
+}
+
+header{
+    width:100%;
+    height:5rem;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+
+.container{
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+nav{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.nav-brand{
+    width:2rem;
+}
+
+.menu-icons i{
+    font-size: 3.2rem;
+    color:#dadada;
+    cursor: pointer;
+}
+
+.close i{
+    color: #eb343c;
+}
+
+.nav-list{
+    width:25rem;
+    height:100vh;
+    background-color: #d7d4ed;
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
+}
+
+.nav-list.active{
+    right: 0;
+}
+
+.close{
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+.nav-item{
+    margin: 1.5rem 0;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: rgba(224, 28, 28, 0.8);
+}
+
+
+/*hero*/
+.hero{
+    width: 100%;
+    height: 70vh;
+    background: linear-gradient(135deg,rgba(39,24,151,0.7) 10%, rgba(88,88,128,0.8) 100%), center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 5.5rem;
+    background: url("../images/wave-small.png") center no-repeat;
+    background-size: cover;
+}
+
+.main-message{
+    width: 100%;
+    max-width: 86rem;
+    color: #fafafa;
+    text-transform: uppercase;
+    transform: translateY(20%);
+
+}
+
+.main-message h3{
+    font-size: 1.6rem;
+}
+.main-message h1{
+    font-family: 'Aldrich',sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+}
+.main-message p::after{
+    background-color: #563d7c; content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4;
+}
+
+.btn {
+    background-color: #eb648c;
+    border-radius: 12rem;
+    color: #fafafa;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    transition: background-color 500ms;
+}
+
+.btn:hover{
+    background-color: #ce587b;
+    color: #563d7c;
+}
+
+@media screen and (min-width: 700px) {
+    header{
+        height:8rem;
+    }
+    .nav-brand{
+        width:3.5rem;
+    }
+    .nav-list{
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        top: initial;
+        right: 0;
+        flex-direction: row;
+        position:relative;
+        transition: initial;
+    }
+
+    .menu-icons{
+        display: none;
+    }
+
+    .nav-item{
+        margin:0 2.5rem;
+    }
+
+    .nav-link{
+        color:#fafafa;
+        position: relative;
+        font-size: 1.3rem;
+        font-weight: bolder;
+    }
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -.5rem;
+        background-color: #eb648c;
+        width: 100%;
+        height: 3px;
+        transform:scaleX(0);
+        transform-origin: left;
+        transition: transform 650ms;
+    }
+
+    .nav-link:hover::before{
+        transform:scaleX(1);
+    }
+}
